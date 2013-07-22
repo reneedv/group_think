@@ -11,4 +11,5 @@ feature "Signing up" do
     click_button "Sign up"
     page.should have_content("You have signed up successfully.")
   end
+
 end

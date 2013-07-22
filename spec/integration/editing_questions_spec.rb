@@ -4,6 +4,7 @@ feature "Editing Questions" do
   let!(:question) { Factory(:question) }
 
   before do
+    sign_in_as!(Factory(:user))
     visit "/"
     click_link question.question
     click_link "Edit or Answer Question"

@@ -4,6 +4,7 @@ feature "Deleting questions" do
   let!(:question) { Factory(:question) }
 
   scenario "Deleting a question" do
+    sign_in_as!(Factory(:user))
     visit "/"
     click_link question.question
     click_link "Delete Question"
