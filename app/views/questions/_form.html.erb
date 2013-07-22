@@ -4,6 +4,12 @@
     <%= f.text_field :question %>
   </p>
 
-  <%= f.submit "Ask Question" %>
+  <h3>Do you know the answer?</h3>
+  <p>
+    <%= f.label :answer %><br>
+    <%= f.text_field :answer %>
+  </p>
+
+  <%= f.submit %>
   <% end %>
 

@@ -6,7 +6,7 @@ feature "Creating Questions" do
     visit "/"
     click_link "New Question"
     fill_in "Question", :with => "Why is the sky blue?"
-    click_button "Ask Question"
+    click_button "Create Question"
     page.should have_content("QQQuestion asked!")
   end
 
