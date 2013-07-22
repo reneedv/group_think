@@ -6,7 +6,7 @@ feature "Editing Questions" do
   before do
     visit "/"
     click_link question.question
-    click_link "Edit Question"
+    click_link "Edit or Answer Question"
   end
 
   scenario "Updating a question" do
