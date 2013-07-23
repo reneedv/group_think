@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
 
   def update
     @question.update_attributes(params[:question])
-    @question.users << current_user
+    @question.users |= [current_user]
     flash[:notice] = "Question Updated"
     redirect_to @question
 
