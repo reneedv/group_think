@@ -1,9 +1,14 @@
 
 <%= link_to "Ask another question", new_question_path %>
 
-<h2><%= @question.question %></h2>
+<div id="ticket">
+  <h2><%= @question.question %></h2>
+  <span id="author">asked by </span>
+
+</div>
 
 <%= link_to "Edit  or Answer Question", edit_question_path %>
 <%= link_to "Delete Question", question_path(@question), method: :delete, confirm: "Are you sure?" %>
 
 
+<p> @question.user.email </p>
