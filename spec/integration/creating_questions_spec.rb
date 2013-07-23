@@ -10,8 +10,8 @@ feature "Creating Questions" do
     fill_in "Question", :with => "Why is the sky blue?"
     click_button "Create Question"
     page.should have_content("QQQuestion asked!")
-    within("#ticket #author") do
-      page.should have_content("asked by #{user.email}")
+    within("#ticket #authors") do
+      page.should have_content("by #{user.email}")
     end
   end
 

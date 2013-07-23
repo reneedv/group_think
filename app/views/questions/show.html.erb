@@ -3,7 +3,11 @@
 
 <div id="ticket">
   <h2><%= @question.question %></h2>
-  <span id="author">asked by </span>
+  <ul id="authors">
+    <% @question.users.each do |user| %>
+      <li> by <%= user.email %> </li>
+    <% end %>
+  </ul>
 
 </div>
 

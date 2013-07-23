@@ -18,11 +18,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    #@question = current_user.questions.build(params[:question])
-    @question = Question.new(params[:question])
-    @question.user_ids = [current_user.id]
-
-    if @question.save
+    if @question = current_user.questions.create(params[:question])
       flash[:notice] = "QQQuestion asked!"
       redirect_to @question
     # else
@@ -37,6 +33,7 @@ class QuestionsController < ApplicationController
 
   def update
     @question.update_attributes(params[:question])
+    @question.users << current_user
     flash[:notice] = "Question Updated"
     redirect_to @question
 
